@@ -4,422 +4,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SleepFit Finder | Your Comfort, Your Way</title>
+<title>SleepFit Finder | Find Your Perfect Sleep</title>
 <style>
-:root {
-  --green:#456653; --dark:#26382f; --cream:#f8f6f0;
-  --sage:#e4ede3; --white:#fffefa; --border:#e2e5dc;
-}
+:root{--green:#416b55;--sage:#dce9dc;--cream:#faf8f2;--ink:#28382f;--muted:#718077;--white:#fff;--line:#e5e9e1}
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--dark);
-font-family:Arial,Helvetica,sans-serif;line-height:1.6}
-.wrap{width:min(1100px,92%);margin:auto}
-header{display:flex;justify-content:space-between;align-items:center;
-padding:20px 0;gap:12px}
-.logo{font-size:23px;font-weight:bold}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+button{font:inherit;cursor:pointer;border:0;border-radius:30px;padding:13px 21px;font-weight:700;transition:.2s}
+button:hover{transform:translateY(-2px)}
+.primary{background:var(--green);color:white}
+.secondary{background:white;color:var(--green);border:1px solid #dce4d9}
+.wrap{max-width:1150px;margin:auto;padding:0 22px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:23px 0}
+.logo{font-size:23px;font-weight:800;letter-spacing:-1px}
 .logo span{color:var(--green)}
-button{cursor:pointer;font:inherit;border-radius:25px;padding:11px 18px;
-border:1px solid var(--border);font-weight:bold}
-.primary{background:var(--dark);color:white}
-.secondary{background:white;color:var(--dark)}
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:35px;
-align-items:center;padding:55px 0}
-h1{font-size:clamp(38px,5vw,64px);line-height:1.08;margin:12px 0}
-h2{line-height:1.2}
-.eyebrow{color:var(--green);font-weight:bold;letter-spacing:2px;
-text-transform:uppercase;font-size:12px}
-.muted{color:#69766e}
-.art{height:330px;border-radius:28px;background:linear-gradient(135deg,#dce8dc,#f0d8c7);
-display:grid;place-items:center;font-size:100px}
-section{padding:30px 0}
-.center{text-align:center;max-width:680px;margin:0 auto 25px}
-.steps,.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:var(--white);border:1px solid var(--border);
-border-radius:20px;padding:20px}
-.quiz{background:var(--sage);border-radius:25px;padding:25px;
-max-width:760px;margin:20px auto}
-.progress{height:7px;background:#cbd8ca;border-radius:10px;margin:15px 0 25px}
-#progressFill{height:100%;background:var(--green);width:25%;border-radius:10px}
-.options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
-.option{background:white;text-align:left;border:1px solid var(--border)}
-.option.selected{background:#dce9dc;border:2px solid var(--green)}
-.controls{display:flex;justify-content:space-between;gap:10px}
-.hidden{display:none!important}
-.product{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.product-art{height:155px;display:grid;place-items:center;
-font-size:65px;background:linear-gradient(135deg,#e1ece1,#f3dfd1)}
-.product-info{padding:17px;display:flex;flex-direction:column;flex:1}
-.product-info h3{margin:0}
-.price{font-size:23px;font-weight:bold;margin:5px 0}
-.tag{display:inline-block;background:var(--sage);padding:4px 9px;
-border-radius:20px;font-size:12px;margin:3px}
-.product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:12px}
-.product-actions button{font-size:13px;padding:9px 12px}
-.notice{background:#fff3d9;padding:12px;border-radius:12px;font-size:13px}
-.compare-bar{margin:20px 0;padding:18px;background:var(--sage);
-border-radius:16px;display:flex;justify-content:space-between;
-align-items:center;gap:12px;flex-wrap:wrap}
-.table-wrap{overflow-x:auto;background:white;border-radius:14px;margin:20px 0}
-table{border-collapse:collapse;width:100%;min-width:550px}
-td,th{text-align:left;padding:13px;border-bottom:1px solid var(--border)}
-th{background:#edf1e9}
-.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-.detail-art{background:var(--sage);border-radius:20px;display:grid;
-place-items:center;font-size:100px;min-height:250px}
-.cart-item{display:flex;justify-content:space-between;gap:12px;
-align-items:center;background:white;padding:15px;border:1px solid var(--border);
-border-radius:12px;margin:10px 0}
-footer{text-align:center;padding:35px 10px;color:#69766e;font-size:13px}
-@media(max-width:700px){
- .hero,.detail-layout{grid-template-columns:1fr}
- .steps,.products{grid-template-columns:1fr}
- .options{grid-template-columns:1fr}
- .art{height:240px}.quiz{padding:17px}
-}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;padding:45px 0 65px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800;color:var(--green)}
+h1{font-size:clamp(42px,6vw,70px);letter-spacing:-3px;line-height:1.04;margin:18px 0}
+h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.5px}
+p{line-height:1.75;color:var(--muted)}
+.hero p{font-size:17px}
+.hero-art{height:370px;border-radius:30px;background:linear-gradient(135deg,#edf1e7,#c9ddcc);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.sun{position:absolute;right:15%;top:12%;width:85px;height:85px;background:#f4e6bd;border-radius:50%;box-shadow:0 0 0 16px #ffffff30}
+.bed{position:relative;margin-top:65px;width:75%;height:150px;background:white;border-radius:20px 20px 8px 8px;box-shadow:0 25px 35px #314c3a20}
+.mattress{height:35px;position:absolute;top:0;left:-3%;right:-3%;background:#fffefa;border:1px solid #e2e6df;border-radius:16px}
+.pillow{position:absolute;top:12px;left:12%;width:30%;height:28px;background:#e7eee3;border-radius:10px}
+.pillow.two{left:48%}
+.blanket{position:absolute;top:43px;left:0;right:0;height:100px;background:linear-gradient(120deg,#d8e7d7,#a7c5af);border-radius:6px 6px 8px 8px}
+.art-label{position:absolute;bottom:22px;left:22px;background:#ffffffd9;padding:12px 17px;border-radius:15px;font-size:13px}
+section{padding:45px 0}
+.center{text-align:center;max-width:670px;margin:0 auto 30px}
+.features,.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature,.product,.quiz-box{background:white;border:1px solid var(--line);border-radius:23px;padding:23px}
+.feature .emoji{font-size:30px}
+.feature h3{margin-bottom:8px}
+.feature p,.product p{font-size:14px}
+.hide{display:none!important}
+.quiz-box{max-width:750px;margin:0 auto;padding:30px}
+.progress{height:7px;background:#e9eee7;border-radius:20px;margin:20px 0;overflow:hidden}
+.progress div{height:100%;background:var(--green);width:25%;transition:.2s}
+.question{font-size:25px;font-weight:800;margin-top:20px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
+.option{text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+.option strong{display:block;margin-bottom:7px}
+.option span{font-size:13px;color:var(--muted);font-weight:400}
+.option.selected{border:2px solid var(--green);background:#edf4ec}
+.quiz-buttons{display:flex;justify-content:space-between;gap:10px}
+.pill{display:inline-block;border-radius:30px;padding:7px 11px;background:#edf4eb;color:var(--green);font-size:12px;font-weight:800}
+.product-image{height:160px;border-radius:17px;background:linear-gradient(135deg,#f0f3e9,#d6e4d5);display:grid;place-items:center;font-size:65px;margin-bottom:18px}
+.price{font-size:22px;font-weight:800}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.tag{background:#f1f4ef;padding:6px 9px;border-radius:8px;font-size:11px;color:#4d6655}
+.product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.product-actions button{flex:1;padding:11px 12px;font-size:12px}
+.banner{background:#e9f0e6;border-radius:22px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:25px}
+.compare-table{border-collapse:collapse;width:100%;min-width:550px;background:white;border-radius:15px;overflow:hidden}
+.compare-table th,.compare-table td{text-align:left;padding:14px;border-bottom:1px solid var(--line);font-size:14px}
+.compare-table th{background:#eaf1e7}
+.compare-wrap{overflow-x:auto;margin-top:20px}
+.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.detail-image{height:320px;display:grid;place-items:center;background:linear-gradient(135deg,#eef3e8,#d0e0d0);border-radius:25px;font-size:100px}
+.notice{font-size:12px;color:var(--muted);line-height:1.6}
+footer{border-top:1px solid var(--line);padding:25px 0;margin-top:30px;color:var(--muted);font-size:12px}
+@media(max-width:750px){.hero,.detail-layout{grid-template-columns:1fr}.hero{padding-top:15px}.hero-art{height:290px}.features,.products{grid-template-columns:1fr}.options{grid-template-columns:1fr}.banner{align-items:flex-start;flex-direction:column}.quiz-box{padding:20px}nav .secondary{display:none}}
 </style>
 </head>
 <body>
-
 <header class="wrap">
-  <div class="logo">SleepFit <span>Finder</span></div>
-  <button class="secondary" onclick="showPage('cart')">
-    Cart (<span id="cartCount">0</span>)
-  </button>
+<nav>
+<div class="logo">sleepfit<span> finder</span> ✦</div>
+<div style="display:flex;gap:9px">
+<button class="secondary" onclick="showCatalog()">Explore mattresses</button>
+<button class="primary" onclick="startQuiz()">Find my fit →</button>
+</div>
+</nav>
 </header>
 
 <main>
-<section id="home" class="wrap">
-  <div class="hero">
-    <div>
-      <div class="eyebrow">A more thoughtful way to shop</div>
-      <h1>Find the mattress that <span style="color:#456653">fits you.</span></h1>
-      <p class="muted">Discover mattress options based on your comfort preferences,
-      priorities and budget.</p>
-      <p><em>Your comfort. Your way.</em></p>
-      <button class="primary" onclick="startQuiz()">Find My Mattress ↗</button>
-      <button class="secondary" onclick="showPage('catalog')">Explore Products</button>
-    </div>
-    <div class="art">🛏️</div>
-  </div>
+<div id="home" class="wrap">
+<div class="hero">
+<div>
+<div class="eyebrow">A better night starts here</div>
+<h1>Your sleep.<br><span style="color:var(--green)">Your perfect fit.</span></h1>
+<p>Not sure which mattress is right for you? Answer a few simple questions and discover options matched to your comfort, support needs and budget.</p>
+<button class="primary" onclick="startQuiz()">Take the 1-minute quiz →</button>
+<button class="secondary" onclick="showCatalog()" style="margin:8px 0 0 5px">Compare mattresses</button>
+<p class="notice">A personalised mattress discovery experience.</p>
+</div>
+<div class="hero-art">
+<div class="sun"></div>
+<div class="bed"><div class="mattress"></div><div class="pillow"></div><div class="pillow two"></div><div class="blanket"></div></div>
+<div class="art-label">✦ Better fit. Better rest.</div>
+</div>
+</div>
+<section>
+<div class="center"><div class="eyebrow">Made simple</div><h2>Take the guesswork out of mattress shopping</h2><p>A guided way to narrow down choices without endless scrolling.</p></div>
+<div class="features">
+<div class="feature"><div class="emoji">🌙</div><h3>Find your comfort</h3><p>Tell us how you like to sleep and what matters most to you.</p></div>
+<div class="feature"><div class="emoji">🎯</div><h3>Get matched</h3><p>Discover a shortlist based on your preferences.</p></div>
+<div class="feature"><div class="emoji">↔️</div><h3>Compare with ease</h3><p>Compare price, feel and features side by side.</p></div>
+</div>
+</section>
+</div>
 
-  <section>
-    <div class="center">
-      <div class="eyebrow">Simple by design</div>
-      <h2>Your next mattress, made easier</h2>
-      <p class="muted">Answer a few questions, discover matching products,
-      and compare your options.</p>
-    </div>
-    <div class="steps">
-      <div class="card"><h3>01. Tell us what matters</h3>
-        <p class="muted">Share your comfort, priorities and budget.</p></div>
-      <div class="card"><h3>02. Discover your matches</h3>
-        <p class="muted">Get a product shortlist based on your answers.</p></div>
-      <div class="card"><h3>03. Compare products</h3>
-        <p class="muted">Review prices and features before deciding.</p></div>
-    </div>
-  </section>
-
-  <section id="quizArea" class="quiz">
-    <div class="center">
-      <div class="eyebrow">SleepFit Finder quiz</div>
-      <h2>Let's find your fit</h2>
-      <p>Four quick questions to help narrow down your choices.</p>
-    </div>
-    <div style="display:flex;justify-content:space-between">
-      <b id="stepLabel">Question 1 of 4</b>
-      <b id="percentage">25%</b>
-    </div>
-    <div class="progress"><div id="progressFill"></div></div>
-    <h3 id="questionTitle"></h3>
-    <p id="questionHelp" class="muted"></p>
-    <div id="options" class="options"></div>
-    <div class="controls">
-      <button id="backButton" class="secondary" onclick="previousQuestion()">Back</button>
-      <button id="nextButton" class="primary" onclick="nextQuestion()">Continue →</button>
-    </div>
-  </section>
+<section id="quiz" class="wrap hide">
+<div class="quiz-box">
+<div class="eyebrow">Your personal sleep finder</div>
+<div class="progress"><div id="progress"></div></div>
+<div id="qnum" class="notice">Question 1 of 4</div>
+<div id="qtitle" class="question"></div>
+<p id="qhelp"></p>
+<div id="options" class="options"></div>
+<div class="quiz-buttons"><button class="secondary" onclick="backQuestion()">← Back</button><button class="primary" id="next" onclick="nextQuestion()">Next →</button></div>
+</div>
 </section>
 
-<section id="results" class="wrap hidden">
-  <button class="secondary" onclick="showPage('home')">← Home</button>
-  <div class="center">
-    <div class="eyebrow">Your personalised shortlist</div>
-    <h2>Your Mattress Matches</h2>
-    <p class="muted">These products are ranked using the preferences you selected.</p>
-  </div>
-  <div class="notice">
-    Student prototype: product names, prices and specifications below are
-    illustrative examples, not verified current listings from The Sleep Company.
-  </div>
-  <div id="answerSummary" style="margin:15px 0"></div>
-  <div id="resultProducts" class="products"></div>
-  <div class="compare-bar">
-    <span><b>Compare your shortlist</b><br>
-      <small id="compareText">Select at least two products.</small></span>
-    <button class="primary" onclick="compareProducts()">Compare Selected</button>
-  </div>
-  <div id="comparison"></div>
+<section id="results" class="wrap hide">
+<div class="center"><div class="eyebrow">Your personalised shortlist</div><h2>Mattresses picked for you ✨</h2><p id="resultIntro">Matched to your sleep preferences.</p></div>
+<div id="recommended" class="products"></div>
+<div class="banner"><div><strong>Still deciding?</strong><p style="margin:5px 0 0">Select any two or three mattresses to compare.</p></div><button class="secondary" onclick="compareSelected()">Compare selected ↔</button></div>
+<div id="compareResults" class="hide"><h2 style="margin-top:35px">Your comparison</h2><div id="compareResultsTable" class="compare-wrap"></div></div>
+<p class="notice">Academic prototype: product names, prices and specifications below are illustrative examples, not verified live listings.</p>
 </section>
 
-<section id="catalog" class="wrap hidden">
-  <button class="secondary" onclick="showPage('home')">← Home</button>
-  <div class="center"><h2>Explore Mattress Options</h2>
-    <p class="muted">Explore the sample catalogue or take the quiz for personalised matches.</p>
-    <button class="primary" onclick="startQuiz()">Find My Matches</button>
-  </div>
-  <div id="catalogProducts" class="products"></div>
+<section id="catalog" class="wrap hide">
+<div class="center"><div class="eyebrow">Explore</div><h2>Explore mattresses</h2><p>Browse products or take the quiz to receive personalised recommendations.</p></div>
+<div id="catalogProducts" class="products"></div>
+<div id="catalogCompare" class="hide"><h2>Compare mattresses</h2><div id="catalogTable" class="compare-wrap"></div></div>
 </section>
 
-<section id="detail" class="wrap hidden">
-  <button class="secondary" onclick="showPage(previousPage)">← Back to products</button>
-  <div id="detailContent" style="margin-top:20px"></div>
-</section>
-
-<section id="cart" class="wrap hidden">
-  <button class="secondary" onclick="showPage(previousPage)">← Continue shopping</button>
-  <h2>Your Cart</h2>
-  <p class="muted">This is a demo cart. It does not process orders or payments.</p>
-  <div id="cartContent"></div>
-</section>
-<footer>SleepFit Finder · Your comfort. Your way.<br>
-Student concept prototype. Not an official The Sleep Company website.</footer>
+<section id="details" class="wrap hide"><div id="detailContent"></div></section>
 </main>
+<footer class="wrap">SleepFit Finder · Student-built discovery prototype · Not affiliated with The Sleep Company.</footer>
 
 <script>
-const products=[
- {id:1,name:"Cloud Comfort Mattress",price:8999,feel:"Soft",
-  priority:"Comfort",features:"Cushioned feel, breathable cover",
-  support:"Gentle cushioning",cooling:"Breathable cover"},
- {id:2,name:"Balanced Rest Mattress",price:16999,feel:"Medium",
-  priority:"Support",features:"Balanced support, everyday comfort",
-  support:"Balanced support",cooling:"Not specified in demo data"},
- {id:3,name:"Firm Support Mattress",price:22999,feel:"Firm",
-  priority:"Support",features:"Firm feel, support-focused",
-  support:"Firm support",cooling:"Not specified in demo data"},
- {id:4,name:"Breeze Comfort Mattress",price:32999,feel:"Medium",
-  priority:"Cooling",features:"Cooling priority, comfort-focused",
-  support:"Balanced support",cooling:"Cooling-oriented demo feature"},
- {id:5,name:"Premium Flex Mattress",price:42999,feel:"Firm",
-  priority:"Value",features:"Durability, value-focused",
-  support:"Firm support",cooling:"Not specified in demo data"},
- {id:6,name:"Soft Nest Mattress",price:18999,feel:"Soft",
-  priority:"Comfort",features:"Pressure relief, everyday comfort",
-  support:"Cushioned support",cooling:"Not specified in demo data"}
+const items=[
+{id:1,name:"Cloud Comfort",price:18999,feel:"Soft",priority:"Comfort",support:"Medium",cooling:"Medium",emoji:"☁️",description:"A plush-feel concept for shoppers who prefer a softer surface.",features:["Soft feel","Pressure comfort","Plush design"]},
+{id:2,name:"Balance Hybrid",price:22999,feel:"Medium",priority:"Support",support:"High",cooling:"Medium",emoji:"🌿",description:"A balanced concept combining cushioning with a supportive feel.",features:["Medium feel","Balanced support","Hybrid concept"]},
+{id:3,name:"Breeze Cool",price:25999,feel:"Medium",priority:"Cooling",support:"Medium",cooling:"High",emoji:"❄️",description:"A cooling-focused concept for people who tend to sleep warm.",features:["Cooling focus","Medium feel","Breathable concept"]},
+{id:4,name:"Firm Foundation",price:16999,feel:"Firm",priority:"Support",support:"High",cooling:"Low",emoji:"🪨",description:"A firmer-feel concept for shoppers who prefer a stable sleep surface.",features:["Firm feel","Support focus","Stable design"]},
+{id:5,name:"Everyday Ease",price:11999,feel:"Medium",priority:"Value",support:"Medium",cooling:"Low",emoji:"🌾",description:"A budget-conscious concept with a medium feel.",features:["Medium feel","Everyday comfort","Value focused"]},
+{id:6,name:"Soft Nest",price:14999,feel:"Soft",priority:"Comfort",support:"Low",cooling:"Medium",emoji:"🪶",description:"A softer, accessible concept for shoppers who like a cushioned feel.",features:["Soft feel","Cushioned top","Value focused"]}
 ];
-
 const questions=[
- {key:"feel",title:"What comfort feel do you prefer?",
-  help:"Choose the surface feel you like.",options:["Soft","Medium","Firm"]},
- {key:"priority",title:"What matters most to you?",
-  help:"Choose your main priority.",
-  options:["Comfort","Support","Cooling","Value"]},
- {key:"budget",title:"What is your budget?",
-  help:"Select your preferred price range.",
-  options:["Under ₹10,000","₹10,000–₹20,000","₹20,000–₹35,000","Above ₹35,000"]},
- {key:"next",title:"What would you like to do next?",
-  help:"Choose how you want to explore the results.",
-  options:["Find closest matches","Compare a few options","View product details"]}
+{key:"feel",title:"What mattress feel do you prefer?",help:"Choose the surface feel you usually find comfortable.",options:[["Soft","Soft & cushioned","A plush, sinking-in sensation"],["Medium","Balanced","A mix of cushioning and support"],["Firm","Firm & stable","Less sink, more push-back"]]},
+{key:"priority",title:"What matters most to you?",help:"We’ll use this to rank your recommendations.",options:[["Comfort","Comfort","A cosy, cushioned feel"],["Support","Support","A stable, supportive feel"],["Cooling","Staying cool","A cooler-feeling surface"],["Value","Value for money","Keep cost in mind"]]},
+{key:"budget",title:"What is your approximate budget?",help:"We’ll prioritise options in or near your range.",options:[["low","Under ₹15,000","Budget-friendly"],["mid","₹15,000–₹22,000","Mid-range options"],["high","₹22,000+","Explore premium options"]]},
+{key:"next",title:"How would you like to explore your results?",help:"You can change your mind later.",options:[["recommend","See recommendations","Start with your best matches"],["compare","Compare products","See differences side by side"],["details","View product details","Explore a recommended option"]]}
 ];
-
-let answers={feel:"",priority:"",budget:"",next:""};
-let questionIndex=0, selected=[], cartItems=[], previousPage="results";
-
-function $(id){return document.getElementById(id)}
-function money(n){return "₹"+n.toLocaleString("en-IN")}
-
-function showPage(name){
- ["home","results","catalog","detail","cart"].forEach(id=>$(id).classList.toggle("hidden",id!==name));
- if(name==="results")renderResults();
- if(name==="catalog")renderCatalog();
- if(name==="cart")renderCart();
- window.scrollTo({top:0,behavior:"smooth"});
-}
-
-function startQuiz(){
- questionIndex=0;
- showPage("home");
- renderQuestion();
- $("quizArea").scrollIntoView({behavior:"smooth"});
-}
-
-function renderQuestion(){
- const q=questions[questionIndex];
- $("stepLabel").textContent=`Question ${questionIndex+1} of 4`;
- $("percentage").textContent=`${(questionIndex+1)*25}%`;
- $("progressFill").style.width=`${(questionIndex+1)*25}%`;
- $("questionTitle").textContent=q.title;
- $("questionHelp").textContent=q.help;
- $("options").innerHTML=q.options.map(option=>
-  `<button class="option ${answers[q.key]===option?"selected":""}"
-   onclick="chooseOption('${option.replace(/'/g,"\\'")}')">${option}</button>`
- ).join("");
- $("backButton").disabled=questionIndex===0;
- $("nextButton").textContent=questionIndex===3?"Show My Matches →":"Continue →";
-}
-
-function chooseOption(option){
- answers[questions[questionIndex].key]=option;
- renderQuestion();
-}
-
-function nextQuestion(){
- const key=questions[questionIndex].key;
- if(!answers[key]){alert("Please select an answer to continue.");return}
- if(questionIndex<3){questionIndex++;renderQuestion()}
- else{
-  console.log("quiz_complete",answers);
-  showPage("results");
- }
-}
-
-function previousQuestion(){
- if(questionIndex>0){questionIndex--;renderQuestion()}
-}
-
-function budgetRange(b){
- if(b==="Under ₹10,000")return [0,9999];
- if(b==="₹10,000–₹20,000")return [10000,20000];
- if(b==="₹20,000–₹35,000")return [20000,35000];
- return [35001,999999];
-}
-
-function scoreProduct(p){
- let score=0;
- if(p.feel===answers.feel)score+=5;
- if(p.priority===answers.priority)score+=3;
- const [low,high]=budgetRange(answers.budget);
- if(p.price>=low&&p.price<=high)score+=4;
- return score;
-}
-
-function productReason(p){
- const reasons=[];
- if(p.feel===answers.feel)reasons.push("matches your preferred comfort feel");
- const [low,high]=budgetRange(answers.budget);
- if(p.price>=low&&p.price<=high)reasons.push("fits your selected budget");
- if(p.priority===answers.priority)reasons.push("aligns with your main priority");
- return reasons.length?reasons.join("; "):"one of the closest available demo options";
-}
-
-function productCard(p,topMatch=false){
- return `<article class="card product">
- <div class="product-art">${topMatch?"⭐ ":""}🛏️</div>
- <div class="product-info">
- <h3>${p.name}</h3>
- <div class="price">${money(p.price)}</div>
- <div><span class="tag">${p.feel} feel</span>
- <span class="tag">${p.priority}</span></div>
- <p class="muted">${p.features}</p>
- <p><b>Why it appears:</b> ${productReason(p)}.</p>
- <div class="product-actions">
- <button class="primary" onclick="viewDetails(${p.id})">View Details</button>
- <button class="secondary" onclick="toggleCompare(${p.id})">
- ${selected.includes(p.id)?"✓ Selected":"Add to Compare"}</button>
- </div></div></article>`;
-}
-
-function renderResults(){
- const ranked=[...products].sort((a,b)=>scoreProduct(b)-scoreProduct(a));
- $("answerSummary").innerHTML=
-  `<span class="tag">Comfort: ${answers.feel}</span>
-   <span class="tag">Priority: ${answers.priority}</span>
-   <span class="tag">Budget: ${answers.budget}</span>`;
- $("resultProducts").innerHTML=ranked.slice(0,4)
-  .map((p,i)=>productCard(p,i===0)).join("");
- $("compareText").textContent=selected.length
-  ?`${selected.length} selected. Choose up to 3 products.`
-  :"Select at least two products to compare.";
- console.log("recommended_products_view",{count:Math.min(4,ranked.length)});
-}
-
-function renderCatalog(){
- $("catalogProducts").innerHTML=products.map(p=>productCard(p)).join("");
-}
-
-function toggleCompare(id){
- if(selected.includes(id))selected=selected.filter(x=>x!==id);
- else if(selected.length>=3){alert("You can compare up to 3 products.");return}
- else selected.push(id);
- if(!$("results").classList.contains("hidden"))renderResults();
- else renderCatalog();
-}
-
-function compareProducts(){
- if(selected.length<2){alert("Select at least two products to compare.");return}
- const chosen=selected.map(id=>products.find(p=>p.id===id));
- const rows=[
-  ["Price",p=>money(p.price)],
-  ["Comfort feel",p=>p.feel],
-  ["Main priority",p=>p.priority],
-  ["Features",p=>p.features],
-  ["Support",p=>p.support],
-  ["Cooling",p=>p.cooling]
- ];
- $("comparison").innerHTML=
- `<h3>Side-by-side product comparison</h3><div class="table-wrap"><table>
- <tr><th>Feature</th>${chosen.map(p=>`<th>${p.name}</th>`).join("")}</tr>
- ${rows.map(([label,fn])=>`<tr><th>${label}</th>
- ${chosen.map(p=>`<td>${fn(p)}</td>`).join("")}</tr>`).join("")}
- </table></div>`;
-}
-
-function viewDetails(id){
- const p=products.find(x=>x.id===id);
- previousPage=$("catalog").classList.contains("hidden")?"results":"catalog";
- showPage("detail");
- $("detailContent").innerHTML=`<div class="detail-layout">
- <div class="detail-art">🛏️</div><div>
- <div class="eyebrow">Product details · demo</div>
- <h2>${p.name}</h2><div class="price">${money(p.price)}</div>
- <p>${p.features}</p><p><b>Comfort feel:</b> ${p.feel}</p>
- <p><b>Support:</b> ${p.support}</p>
- <p><b>Cooling:</b> ${p.cooling}</p>
- <p class="muted">Illustrative product details, not official brand specifications.</p>
- <button class="primary" onclick="addToCart(${p.id})">Add to Cart</button>
- <button class="secondary" onclick="toggleCompare(${p.id})">Add to Compare</button>
- </div></div>`;
- console.log("product_detail_view",{product_id:id});
-}
-
-function addToCart(id){
- const existing=cartItems.find(x=>x.id===id);
- if(existing)existing.qty++;
- else cartItems.push({id,qty:1});
- updateCart();
- console.log("add_to_cart",{product_id:id});
- alert("Added to your demo cart!");
-}
-
-function updateCart(){
- $("cartCount").textContent=cartItems.reduce((sum,x)=>sum+x.qty,0);
-}
-
-function renderCart(){
- if(!cartItems.length){
-  $("cartContent").innerHTML=`<div class="card"><p>Your cart is empty.</p>
-  <button class="primary" onclick="showPage('catalog')">Explore Products</button></div>`;
-  return;
- }
- const total=cartItems.reduce((sum,item)=>
-  sum+products.find(p=>p.id===item.id).price*item.qty,0);
- $("cartContent").innerHTML=cartItems.map(item=>{
-  const p=products.find(x=>x.id===item.id);
-  return `<div class="cart-item"><div><b>${p.name}</b><br>
-  ${money(p.price)} × ${item.qty}</div>
-  <button class="secondary" onclick="removeFromCart(${p.id})">Remove</button></div>`;
- }).join("")+`<div class="card"><h3>Subtotal: ${money(total)}</h3>
- <p class="muted">Demo only. Checkout and payment are not available.</p>
- <button class="primary" onclick="alert('This is a student prototype. No order or payment will be processed.')">Continue (demo)</button></div>`;
-}
-
-function removeFromCart(id){
- cartItems=cartItems.filter(x=>x.id!==id);
- updateCart();renderCart();
-}
-
-renderQuestion();
-renderCatalog();
-updateCart();
+let step=0,answers={},selected={},recommendations=[];
+function show(id){["home","quiz","results","catalog","details"].forEach(x=>document.getElementById(x).classList.add("hide"));document.getElementById(id).classList.remove("hide");window.scrollTo({top:0,behavior:"smooth"});}
+function startQuiz(){step=0;answers={};show("quiz");renderQuestion();console.log("quiz_start");}
+function renderQuestion(){let q=questions[step];document.getElementById("qnum").textContent=`Question ${step+1} of ${questions.length}`;document.getElementById("qtitle").textContent=q.title;document.getElementById("qhelp").textContent=q.help;document.getElementById("progress").style.width=((step+1)/questions.length*100)+"%";document.getElementById("next").textContent=step===3?"Show my recommendations →":"Next →";document.getElementById("options").innerHTML=q.options.map(o=>`<button class="option ${answers[q.key]===o[0]?"selected":""}" onclick="choose('${o[0]}')"><strong>${o[1]}</strong><span>${o[2]}</span></button>`).join("");}
+function choose(v){answers[questions[step].key]=v;renderQuestion();}
+function nextQuestion(){if(!answers[questions[step].key]){alert("Please select an option to continue.");return;}if(step<3){step++;renderQuestion();}else{showRecommendations();}}
+function backQuestion(){if(step>0){step--;renderQuestion();}else show("home");}
+function getMatches(){let max=answers.budget==="low"?15000:answers.budget==="mid"?22000:Infinity;return items.map(p=>{let score=0;if(p.feel===answers.feel)score+=5;if(p.priority===answers.priority)score+=3;if(answers.priority==="Support"&&p.support==="High")score+=2;if(answers.priority==="Cooling"&&p.cooling==="High")score+=2;if(answers.priority==="Value"&&p.price<=15000)score+=2;if(p.price<=max)score+=3;else score-=Math.min(4,(p.price-max)/5000);return {...p,score};}).sort((a,b)=>b.score-a.score).slice(0,3);}
+function showRecommendations(){recommendations=getMatches();selected={};document.getElementById("resultIntro").textContent=`Based on your ${answers.feel.toLowerCase()} feel preference, ${answers.priority.toLowerCase()} priority and selected budget.`;document.getElementById("recommended").innerHTML=recommendations.map(card).join("");show("results");console.log("quiz_complete",answers);console.log("recommended_products_view",recommendations.map(p=>p.id));if(answers.next==="compare"){selected[recommendations[0].id]=true;selected[recommendations[1].id]=true;compareSelected();}else if(answers.next==="details"){openDetails(recommendations[0].id,"results");}}
+function card(p){return `<article class="product"><div class="product-image">${p.emoji}</div><span class="pill">Recommended match</span><h3>${p.name}</h3><div class="price">₹${p.price.toLocaleString("en-IN")}</div><div class="tags"><span class="tag">${p.feel} feel</span><span class="tag">${p.support} support</span><span class="tag">${p.cooling==="High"?"Cooling focus":"Everyday comfort"}</span></div><p>${p.description}</p><div class="product-actions"><button class="primary" onclick="openDetails(${p.id},'${document.getElementById("catalog").classList.contains("hide")?"results":"catalog"}')">View details</button><button class="secondary" onclick="toggleSelect(${p.id},this)">${selected[p.id]?"✓ Selected":"＋ Compare"}</button></div></article>`;}
+function showCatalog(){selected={};document.getElementById("catalogProducts").innerHTML=items.map(card).join("");document.getElementById("catalogCompare").classList.add("hide");show("catalog");}
+function toggleSelect(id,button){if(selected[id])delete selected[id];else{if(Object.keys(selected).length>=3){alert("You can compare up to three products.");return;}selected[id]=true;}button.textContent=selected[id]?"✓ Selected":"＋ Compare";console.log("compare_selection",id,selected[id]);}
+function compareSelected(){let ids=Object.keys(selected);if(ids.length<2){alert("Select at least two products using the Compare buttons.");return;}let list=ids.map(id=>items.find(p=>p.id==id));let rows=[["Price",p=>"₹"+p.price.toLocaleString("en-IN")],["Feel",p=>p.feel],["Support",p=>p.support],["Cooling",p=>p.cooling],["Priority match",p=>p.priority],["About",p=>p.description]];let html=`<table class="compare-table"><thead><tr><th>Feature</th>${list.map(p=>`<th>${p.name}</th>`).join("")}</tr></thead><tbody>${rows.map(([label,fn])=>`<tr><th>${label}</th>${list.map(p=>`<td>${fn(p)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;if(!document.getElementById("catalog").classList.contains("hide")){document.getElementById("catalogTable").innerHTML=html;document.getElementById("catalogCompare").classList.remove("hide");}else{document.getElementById("compareResultsTable").innerHTML=html;document.getElementById("compareResults").classList.remove("hide");}console.log("product_comparison_view",ids);}
+function openDetails(id,origin){let p=items.find(x=>x.id===id);window.detailOrigin=origin;document.getElementById("detailContent").innerHTML=`<button class="secondary" onclick="backFromDetails()">← Back to products</button><div class="detail-layout" style="margin-top:25px"><div class="detail-image">${p.emoji}</div><div><div class="eyebrow">Product details · demo</div><h2>${p.name}</h2><div class="price">₹${p.price.toLocaleString("en-IN")}</div><p>${p.description}</p><div class="tags">${p.features.map(f=>`<span class="tag">${f}</span>`).join("")}</div><p><strong>Feel:</strong> ${p.feel}<br><strong>Support:</strong> ${p.support}<br><strong>Cooling:</strong> ${p.cooling}</p><p class="notice">Illustrative product details only; not verified live specifications.</p><button class="primary" onclick="alert('Demo only: this prototype does not process orders.')">Continue to product →</button></div></div>`;show("details");console.log("product_detail_view",p.id,origin);}
+function backFromDetails(){if(window.detailOrigin==="catalog")showCatalog();else show("results");}
 </script>
 </body>
 </html>
