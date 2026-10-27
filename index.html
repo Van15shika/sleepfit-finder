@@ -4,75 +4,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SleepFit Finder | Find Your Perfect Sleep</title>
+<title>SleepFit Finder — Your Perfect Sleep Awaits</title>
 <style>
-:root{--green:#416b55;--sage:#dce9dc;--cream:#faf8f2;--ink:#28382f;--muted:#718077;--white:#fff;--line:#e5e9e1}
+:root{--green:#365d49;--sage:#dce8d9;--cream:#faf8f2;--ink:#28372e;--muted:#748078;--gold:#e7cf9e;--line:#e5e9e1}
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
-button{font:inherit;cursor:pointer;border:0;border-radius:30px;padding:13px 21px;font-weight:700;transition:.2s}
-button:hover{transform:translateY(-2px)}
-.primary{background:var(--green);color:white}
-.secondary{background:white;color:var(--green);border:1px solid #dce4d9}
-.wrap{max-width:1150px;margin:auto;padding:0 22px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:23px 0}
-.logo{font-size:23px;font-weight:800;letter-spacing:-1px}
-.logo span{color:var(--green)}
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;padding:45px 0 65px}
-.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800;color:var(--green)}
-h1{font-size:clamp(42px,6vw,70px);letter-spacing:-3px;line-height:1.04;margin:18px 0}
-h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.5px}
-p{line-height:1.75;color:var(--muted)}
-.hero p{font-size:17px}
-.hero-art{height:370px;border-radius:30px;background:linear-gradient(135deg,#edf1e7,#c9ddcc);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.sun{position:absolute;right:15%;top:12%;width:85px;height:85px;background:#f4e6bd;border-radius:50%;box-shadow:0 0 0 16px #ffffff30}
-.bed{position:relative;margin-top:65px;width:75%;height:150px;background:white;border-radius:20px 20px 8px 8px;box-shadow:0 25px 35px #314c3a20}
-.mattress{height:35px;position:absolute;top:0;left:-3%;right:-3%;background:#fffefa;border:1px solid #e2e6df;border-radius:16px}
-.pillow{position:absolute;top:12px;left:12%;width:30%;height:28px;background:#e7eee3;border-radius:10px}
-.pillow.two{left:48%}
-.blanket{position:absolute;top:43px;left:0;right:0;height:100px;background:linear-gradient(120deg,#d8e7d7,#a7c5af);border-radius:6px 6px 8px 8px}
-.art-label{position:absolute;bottom:22px;left:22px;background:#ffffffd9;padding:12px 17px;border-radius:15px;font-size:13px}
-section{padding:45px 0}
-.center{text-align:center;max-width:670px;margin:0 auto 30px}
-.features,.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.feature,.product,.quiz-box{background:white;border:1px solid var(--line);border-radius:23px;padding:23px}
-.feature .emoji{font-size:30px}
-.feature h3{margin-bottom:8px}
-.feature p,.product p{font-size:14px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif}
+button{font:inherit;cursor:pointer;border:0;border-radius:30px;padding:13px 20px;font-weight:700;transition:.2s}
+button:hover{transform:translateY(-2px);box-shadow:0 8px 18px #263c2c14}
+.primary{background:var(--green);color:white}.secondary{background:white;color:var(--green);border:1px solid #dce4d9}
+.wrap{max-width:1160px;margin:auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-size:23px;font-weight:850;letter-spacing:-1px}.logo span{color:var(--green)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:35px 0 75px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:800;color:var(--green)}
+h1{font-size:clamp(45px,6vw,76px);letter-spacing:-4px;line-height:1.01;margin:18px 0}
+h2{font-size:clamp(29px,4vw,43px);letter-spacing:-1.6px;margin:12px 0}
+p{line-height:1.8;color:var(--muted)}
+.hero-copy>p{font-size:17px;max-width:490px}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.hero-art{height:440px;position:relative;overflow:hidden;border-radius:32px;background:linear-gradient(145deg,#eff1e7 0%,#d9e6d7 48%,#c0d6c4 100%);display:flex;align-items:center;justify-content:center}
+.glow{position:absolute;width:240px;height:240px;right:7%;top:5%;border-radius:50%;background:#fff6d9;opacity:.78;box-shadow:0 0 65px #fff9dc}
+.stars{position:absolute;top:12%;left:14%;color:#fff8dd;font-size:25px}
+.stars.s2{top:23%;left:78%;font-size:17px}
+.stars.s3{top:46%;left:10%;font-size:15px}
+.room-window{position:absolute;top:0;left:12%;width:33%;height:46%;border:8px solid #ffffff66;border-top:0;background:linear-gradient(140deg,#f9f5df,#d7e5d2);border-radius:0 0 50% 50%;opacity:.8}
+.bed-shadow{position:absolute;bottom:17%;width:83%;height:33px;background:#56735c27;filter:blur(12px);border-radius:50%}
+.bed-frame{position:absolute;bottom:18%;width:79%;height:29%;background:linear-gradient(100deg,#b38b6c,#d0ac8d 55%,#a77f62);border-radius:13px 13px 10px 10px;box-shadow:0 18px 23px #4b61472b}
+.bed-base{position:absolute;bottom:0;left:4%;right:4%;height:23%;background:linear-gradient(90deg,#b18b6d,#d4b194,#a77e62);border-radius:0 0 8px 8px}
+.mattress{position:absolute;left:-3%;right:-3%;bottom:25%;height:47%;border-radius:17px 17px 8px 8px;background:linear-gradient(180deg,#fffef9,#f2f1e8);box-shadow:0 -3px 8px #ffffffaa inset,0 6px 0 #d9d8cb}
+.mattress:after{content:"";position:absolute;top:13px;left:0;right:0;height:3px;background:#e4e3d8}
+.sheet{position:absolute;bottom:27%;left:0;right:0;height:29%;border-radius:10px 10px 5px 5px;background:linear-gradient(110deg,#e0e9dc,#b7cfb9);clip-path:polygon(0 0,100% 0,100% 100%,0 85%)}
+.pillow{position:absolute;bottom:46%;left:12%;width:29%;height:29%;border-radius:14px;background:linear-gradient(135deg,#fffefa,#e5e8dc);transform:rotate(-4deg);box-shadow:0 5px 10px #657d651c}
+.pillow.two{left:48%;transform:rotate(4deg)}
+.quilt{position:absolute;bottom:26%;left:33%;width:67%;height:30%;background:linear-gradient(120deg,#b8cfb9,#dce7d8);border-radius:12px 12px 5px 5px;clip-path:polygon(0 0,100% 0,100% 100%,4% 100%)}
+.plant{position:absolute;bottom:18%;right:4%;height:105px;width:55px;border-bottom:13px solid #ad886c}
+.leaf{position:absolute;bottom:0;left:18px;width:26px;height:64px;background:#718d70;border-radius:100% 0 100% 0;transform:rotate(-25deg);transform-origin:bottom}
+.leaf.l2{transform:rotate(35deg);left:0;height:54px}
+.leaf.l3{transform:rotate(-55deg);left:25px;height:49px}
+.art-note{position:absolute;bottom:5%;left:6%;background:#ffffffd9;border:1px solid #fff;border-radius:16px;padding:12px 16px;font-size:12px;font-weight:750;box-shadow:0 8px 20px #4258440b}
+.art-note span{color:var(--green)}
+.trust-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:25px;color:#5f7465;font-size:12px;font-weight:650}
+.trust-row span{display:flex;gap:6px;align-items:center}
+section{padding:48px 0}
+.center{text-align:center;max-width:690px;margin:0 auto 35px}
+.features,.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.feature{background:white;border:1px solid var(--line);border-radius:24px;padding:26px}
+.feature-icon{width:54px;height:54px;display:grid;place-items:center;background:#edf3e9;border-radius:18px;font-size:26px}
+.feature h3{margin:17px 0 7px}.feature p{font-size:14px;margin-bottom:0}
 .hide{display:none!important}
-.quiz-box{max-width:750px;margin:0 auto;padding:30px}
-.progress{height:7px;background:#e9eee7;border-radius:20px;margin:20px 0;overflow:hidden}
-.progress div{height:100%;background:var(--green);width:25%;transition:.2s}
-.question{font-size:25px;font-weight:800;margin-top:20px}
-.options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
-.option{text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
-.option strong{display:block;margin-bottom:7px}
-.option span{font-size:13px;color:var(--muted);font-weight:400}
-.option.selected{border:2px solid var(--green);background:#edf4ec}
+.quiz-box{max-width:760px;margin:0 auto;background:white;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 20px 55px #314d3710}
+.progress{height:7px;background:#e9eee6;border-radius:30px;margin:20px 0;overflow:hidden}
+.progress div{height:100%;background:var(--green);width:25%;transition:.3s}
+.question{font-size:26px;font-weight:800;letter-spacing:-.7px;margin-top:22px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.option{text-align:left;background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px}
+.option strong{display:block;margin-bottom:8px}.option span{font-size:13px;color:var(--muted);font-weight:400;line-height:1.5}
+.option.selected{border:2px solid var(--green);background:#edf4eb}
 .quiz-buttons{display:flex;justify-content:space-between;gap:10px}
-.pill{display:inline-block;border-radius:30px;padding:7px 11px;background:#edf4eb;color:var(--green);font-size:12px;font-weight:800}
-.product-image{height:160px;border-radius:17px;background:linear-gradient(135deg,#f0f3e9,#d6e4d5);display:grid;place-items:center;font-size:65px;margin-bottom:18px}
-.price{font-size:22px;font-weight:800}
+.product{background:white;border:1px solid var(--line);border-radius:25px;padding:17px;transition:.2s}
+.product:hover{transform:translateY(-4px);box-shadow:0 15px 30px #2e4b3610}
+.product-image{height:195px;border-radius:19px;background:linear-gradient(145deg,#f2f3e9,#dbe8d9);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;margin-bottom:18px}
+.product-image:before{content:"";position:absolute;width:140px;height:140px;background:#fff9df;border-radius:50%;top:-60px;right:-20px}
+.mini-bed{position:relative;width:75%;height:70px;margin-top:22px;background:#b89678;border-radius:7px;box-shadow:0 12px 18px #49644b1c}
+.mini-mattress{position:absolute;top:-18px;left:-3%;right:-3%;height:29px;border-radius:12px 12px 5px 5px;background:linear-gradient(#fffefa,#e8e9df);border-bottom:4px solid #d3d7ca}
+.mini-pillow{position:absolute;top:-13px;left:12%;height:20px;width:28%;background:#dce8d8;border-radius:7px;transform:rotate(-4deg)}
+.mini-pillow.two{left:48%;transform:rotate(4deg)}
+.mini-duvet{position:absolute;top:13px;left:35%;width:65%;height:46px;background:linear-gradient(120deg,#c3d8c2,#e3ebde);border-radius:7px}
+.product-emoji{position:absolute;bottom:10px;right:12px;font-size:21px}
+.pill{display:inline-block;border-radius:30px;padding:7px 11px;background:#edf4eb;color:var(--green);font-size:11px;font-weight:800}
+.product h3{margin:12px 0 6px;font-size:19px}
+.price{font-size:23px;font-weight:850;letter-spacing:-.5px}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
-.tag{background:#f1f4ef;padding:6px 9px;border-radius:8px;font-size:11px;color:#4d6655}
-.product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-.product-actions button{flex:1;padding:11px 12px;font-size:12px}
-.banner{background:#e9f0e6;border-radius:22px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:25px}
+.tag{background:#f1f4ef;padding:6px 9px;border-radius:8px;font-size:10px;color:#4d6655}
+.product p{font-size:13px;line-height:1.65;min-height:62px}
+.product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.product-actions button{flex:1;padding:11px 10px;font-size:12px}
+.banner{background:#e9f0e6;border-radius:23px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:25px}
 .compare-table{border-collapse:collapse;width:100%;min-width:550px;background:white;border-radius:15px;overflow:hidden}
-.compare-table th,.compare-table td{text-align:left;padding:14px;border-bottom:1px solid var(--line);font-size:14px}
+.compare-table th,.compare-table td{text-align:left;padding:14px;border-bottom:1px solid var(--line);font-size:13px}
 .compare-table th{background:#eaf1e7}
 .compare-wrap{overflow-x:auto;margin-top:20px}
-.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
-.detail-image{height:320px;display:grid;place-items:center;background:linear-gradient(135deg,#eef3e8,#d0e0d0);border-radius:25px;font-size:100px}
-.notice{font-size:12px;color:var(--muted);line-height:1.6}
-footer{border-top:1px solid var(--line);padding:25px 0;margin-top:30px;color:var(--muted);font-size:12px}
-@media(max-width:750px){.hero,.detail-layout{grid-template-columns:1fr}.hero{padding-top:15px}.hero-art{height:290px}.features,.products{grid-template-columns:1fr}.options{grid-template-columns:1fr}.banner{align-items:flex-start;flex-direction:column}.quiz-box{padding:20px}nav .secondary{display:none}}
+.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.detail-image{height:350px;display:grid;place-items:center;background:linear-gradient(145deg,#f0f3e9,#d0e1d0);border-radius:27px}
+.detail-image .mini-bed{transform:scale(1.3)}
+.notice{font-size:11px;color:var(--muted);line-height:1.7}
+footer{border-top:1px solid var(--line);padding:25px 0;margin-top:35px;color:var(--muted);font-size:12px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:15px}.hero-art{height:330px}.features,.products{grid-template-columns:1fr}.options{grid-template-columns:1fr}.banner{align-items:flex-start;flex-direction:column}.quiz-box{padding:21px}.detail-layout{grid-template-columns:1fr}.nav-actions .secondary{display:none}.product-image{height:220px}}
 </style>
 </head>
 <body>
 <header class="wrap">
 <nav>
 <div class="logo">sleepfit<span> finder</span> ✦</div>
-<div style="display:flex;gap:9px">
+<div class="nav-actions">
 <button class="secondary" onclick="showCatalog()">Explore mattresses</button>
 <button class="primary" onclick="startQuiz()">Find my fit →</button>
 </div>
@@ -82,26 +107,31 @@ footer{border-top:1px solid var(--line);padding:25px 0;margin-top:30px;color:var
 <main>
 <div id="home" class="wrap">
 <div class="hero">
-<div>
+<div class="hero-copy">
 <div class="eyebrow">A better night starts here</div>
 <h1>Your sleep.<br><span style="color:var(--green)">Your perfect fit.</span></h1>
 <p>Not sure which mattress is right for you? Answer a few simple questions and discover options matched to your comfort, support needs and budget.</p>
-<button class="primary" onclick="startQuiz()">Take the 1-minute quiz →</button>
-<button class="secondary" onclick="showCatalog()" style="margin:8px 0 0 5px">Compare mattresses</button>
-<p class="notice">A personalised mattress discovery experience.</p>
+<div class="hero-buttons">
+<button class="primary" onclick="startQuiz()">Find my mattress →</button>
+<button class="secondary" onclick="showCatalog()">Explore products</button>
+</div>
+<div class="trust-row"><span>✦ Personalised matches</span><span>♡ Comfort-first discovery</span></div>
 </div>
 <div class="hero-art">
-<div class="sun"></div>
-<div class="bed"><div class="mattress"></div><div class="pillow"></div><div class="pillow two"></div><div class="blanket"></div></div>
-<div class="art-label">✦ Better fit. Better rest.</div>
+<div class="room-window"></div><div class="glow"></div>
+<div class="stars">✦</div><div class="stars s2">✧</div><div class="stars s3">✦</div>
+<div class="bed-shadow"></div>
+<div class="bed-frame"><div class="bed-base"></div><div class="mattress"></div><div class="sheet"></div><div class="pillow"></div><div class="pillow two"></div><div class="quilt"></div></div>
+<div class="plant"><span class="leaf"></span><span class="leaf l2"></span><span class="leaf l3"></span></div>
+<div class="art-note">☾ &nbsp; <span>Sleep better, feel brighter</span></div>
 </div>
 </div>
 <section>
-<div class="center"><div class="eyebrow">Made simple</div><h2>Take the guesswork out of mattress shopping</h2><p>A guided way to narrow down choices without endless scrolling.</p></div>
+<div class="center"><div class="eyebrow">Made simple</div><h2>Take the guesswork out of mattress shopping</h2><p>A thoughtful way to discover a mattress that fits your needs, without endless scrolling.</p></div>
 <div class="features">
-<div class="feature"><div class="emoji">🌙</div><h3>Find your comfort</h3><p>Tell us how you like to sleep and what matters most to you.</p></div>
-<div class="feature"><div class="emoji">🎯</div><h3>Get matched</h3><p>Discover a shortlist based on your preferences.</p></div>
-<div class="feature"><div class="emoji">↔️</div><h3>Compare with ease</h3><p>Compare price, feel and features side by side.</p></div>
+<div class="feature"><div class="feature-icon">☾</div><h3>Discover your comfort</h3><p>Tell us about your preferred feel, sleep priorities and budget.</p></div>
+<div class="feature"><div class="feature-icon">✧</div><h3>Find your match</h3><p>Get a shortlist of mattress options tailored to your answers.</p></div>
+<div class="feature"><div class="feature-icon">↔</div><h3>Choose with confidence</h3><p>Compare product details and prices side by side.</p></div>
 </div>
 </section>
 </div>
@@ -119,52 +149,53 @@ footer{border-top:1px solid var(--line);padding:25px 0;margin-top:30px;color:var
 </section>
 
 <section id="results" class="wrap hide">
-<div class="center"><div class="eyebrow">Your personalised shortlist</div><h2>Mattresses picked for you ✨</h2><p id="resultIntro">Matched to your sleep preferences.</p></div>
+<div class="center"><div class="eyebrow">Curated for your comfort</div><h2>Your sleep-fit shortlist ✨</h2><p id="resultIntro">Recommendations based on your answers.</p></div>
 <div id="recommended" class="products"></div>
-<div class="banner"><div><strong>Still deciding?</strong><p style="margin:5px 0 0">Select any two or three mattresses to compare.</p></div><button class="secondary" onclick="compareSelected()">Compare selected ↔</button></div>
-<div id="compareResults" class="hide"><h2 style="margin-top:35px">Your comparison</h2><div id="compareResultsTable" class="compare-wrap"></div></div>
-<p class="notice">Academic prototype: product names, prices and specifications below are illustrative examples, not verified live listings.</p>
+<div class="banner"><div><strong>Found a few favourites?</strong><p style="margin:5px 0 0">Choose two or three mattresses to compare their features.</p></div><button class="secondary" onclick="compareSelected()">Compare selected ↔</button></div>
+<div id="compareResults" class="hide"><h2 style="margin-top:35px">Your mattress comparison</h2><div id="compareResultsTable" class="compare-wrap"></div></div>
+<p class="notice">Student project prototype. Product names, prices and features are illustrative examples, not verified live listings.</p>
 </section>
 
 <section id="catalog" class="wrap hide">
-<div class="center"><div class="eyebrow">Explore</div><h2>Explore mattresses</h2><p>Browse products or take the quiz to receive personalised recommendations.</p></div>
+<div class="center"><div class="eyebrow">The collection</div><h2>Explore mattresses</h2><p>Browse the sample collection, or take the quiz for recommendations matched to you.</p></div>
 <div id="catalogProducts" class="products"></div>
 <div id="catalogCompare" class="hide"><h2>Compare mattresses</h2><div id="catalogTable" class="compare-wrap"></div></div>
 </section>
 
 <section id="details" class="wrap hide"><div id="detailContent"></div></section>
 </main>
-<footer class="wrap">SleepFit Finder · Student-built discovery prototype · Not affiliated with The Sleep Company.</footer>
+<footer class="wrap">SleepFit Finder · Mattress discovery prototype for a digital analytics project · Not affiliated with The Sleep Company.</footer>
 
 <script>
 const items=[
-{id:1,name:"Cloud Comfort",price:18999,feel:"Soft",priority:"Comfort",support:"Medium",cooling:"Medium",emoji:"☁️",description:"A plush-feel concept for shoppers who prefer a softer surface.",features:["Soft feel","Pressure comfort","Plush design"]},
-{id:2,name:"Balance Hybrid",price:22999,feel:"Medium",priority:"Support",support:"High",cooling:"Medium",emoji:"🌿",description:"A balanced concept combining cushioning with a supportive feel.",features:["Medium feel","Balanced support","Hybrid concept"]},
-{id:3,name:"Breeze Cool",price:25999,feel:"Medium",priority:"Cooling",support:"Medium",cooling:"High",emoji:"❄️",description:"A cooling-focused concept for people who tend to sleep warm.",features:["Cooling focus","Medium feel","Breathable concept"]},
-{id:4,name:"Firm Foundation",price:16999,feel:"Firm",priority:"Support",support:"High",cooling:"Low",emoji:"🪨",description:"A firmer-feel concept for shoppers who prefer a stable sleep surface.",features:["Firm feel","Support focus","Stable design"]},
-{id:5,name:"Everyday Ease",price:11999,feel:"Medium",priority:"Value",support:"Medium",cooling:"Low",emoji:"🌾",description:"A budget-conscious concept with a medium feel.",features:["Medium feel","Everyday comfort","Value focused"]},
-{id:6,name:"Soft Nest",price:14999,feel:"Soft",priority:"Comfort",support:"Low",cooling:"Medium",emoji:"🪶",description:"A softer, accessible concept for shoppers who like a cushioned feel.",features:["Soft feel","Cushioned top","Value focused"]}
+{id:1,name:"Cloud Comfort",price:18999,feel:"Soft",priority:"Comfort",support:"Medium",cooling:"Medium",description:"A plush-feel concept for shoppers who prefer a softer surface.",features:["Soft feel","Pressure comfort","Plush design"],shade:"#d6e7d6"},
+{id:2,name:"Balance Hybrid",price:22999,feel:"Medium",priority:"Support",support:"High",cooling:"Medium",description:"A balanced concept combining cushioning with a supportive feel.",features:["Medium feel","Balanced support","Hybrid concept"],shade:"#d9e5d4"},
+{id:3,name:"Breeze Cool",price:25999,feel:"Medium",priority:"Cooling",support:"Medium",cooling:"High",description:"A cooling-focused concept for people who tend to sleep warm.",features:["Cooling focus","Medium feel","Breathable concept"],shade:"#d3e6e9"},
+{id:4,name:"Firm Foundation",price:16999,feel:"Firm",priority:"Support",support:"High",cooling:"Low",description:"A firmer-feel concept for shoppers who prefer a stable sleep surface.",features:["Firm feel","Support focus","Stable design"],shade:"#e5dacb"},
+{id:5,name:"Everyday Ease",price:11999,feel:"Medium",priority:"Value",support:"Medium",cooling:"Low",description:"A budget-conscious concept with a medium feel.",features:["Medium feel","Everyday comfort","Value focused"],shade:"#e5e6d6"},
+{id:6,name:"Soft Nest",price:14999,feel:"Soft",priority:"Comfort",support:"Low",cooling:"Medium",description:"A softer, accessible concept for shoppers who like a cushioned feel.",features:["Soft feel","Cushioned top","Value focused"],shade:"#e8dfe0"}
 ];
 const questions=[
 {key:"feel",title:"What mattress feel do you prefer?",help:"Choose the surface feel you usually find comfortable.",options:[["Soft","Soft & cushioned","A plush, sinking-in sensation"],["Medium","Balanced","A mix of cushioning and support"],["Firm","Firm & stable","Less sink, more push-back"]]},
 {key:"priority",title:"What matters most to you?",help:"We’ll use this to rank your recommendations.",options:[["Comfort","Comfort","A cosy, cushioned feel"],["Support","Support","A stable, supportive feel"],["Cooling","Staying cool","A cooler-feeling surface"],["Value","Value for money","Keep cost in mind"]]},
 {key:"budget",title:"What is your approximate budget?",help:"We’ll prioritise options in or near your range.",options:[["low","Under ₹15,000","Budget-friendly"],["mid","₹15,000–₹22,000","Mid-range options"],["high","₹22,000+","Explore premium options"]]},
-{key:"next",title:"How would you like to explore your results?",help:"You can change your mind later.",options:[["recommend","See recommendations","Start with your best matches"],["compare","Compare products","See differences side by side"],["details","View product details","Explore a recommended option"]]}
+{key:"next",title:"How would you like to explore your results?",help:"Choose how you want to continue after your recommendations appear.",options:[["recommend","See recommendations","Show my personalised shortlist"],["compare","Compare products","Open a side-by-side comparison"],["details","View product details","Explore the top recommended mattress"]]}
 ];
 let step=0,answers={},selected={},recommendations=[];
 function show(id){["home","quiz","results","catalog","details"].forEach(x=>document.getElementById(x).classList.add("hide"));document.getElementById(id).classList.remove("hide");window.scrollTo({top:0,behavior:"smooth"});}
 function startQuiz(){step=0;answers={};show("quiz");renderQuestion();console.log("quiz_start");}
 function renderQuestion(){let q=questions[step];document.getElementById("qnum").textContent=`Question ${step+1} of ${questions.length}`;document.getElementById("qtitle").textContent=q.title;document.getElementById("qhelp").textContent=q.help;document.getElementById("progress").style.width=((step+1)/questions.length*100)+"%";document.getElementById("next").textContent=step===3?"Show my recommendations →":"Next →";document.getElementById("options").innerHTML=q.options.map(o=>`<button class="option ${answers[q.key]===o[0]?"selected":""}" onclick="choose('${o[0]}')"><strong>${o[1]}</strong><span>${o[2]}</span></button>`).join("");}
 function choose(v){answers[questions[step].key]=v;renderQuestion();}
-function nextQuestion(){if(!answers[questions[step].key]){alert("Please select an option to continue.");return;}if(step<3){step++;renderQuestion();}else{showRecommendations();}}
+function nextQuestion(){if(!answers[questions[step].key]){alert("Please select an option to continue.");return;}if(step<3){step++;renderQuestion();}else showRecommendations();}
 function backQuestion(){if(step>0){step--;renderQuestion();}else show("home");}
 function getMatches(){let max=answers.budget==="low"?15000:answers.budget==="mid"?22000:Infinity;return items.map(p=>{let score=0;if(p.feel===answers.feel)score+=5;if(p.priority===answers.priority)score+=3;if(answers.priority==="Support"&&p.support==="High")score+=2;if(answers.priority==="Cooling"&&p.cooling==="High")score+=2;if(answers.priority==="Value"&&p.price<=15000)score+=2;if(p.price<=max)score+=3;else score-=Math.min(4,(p.price-max)/5000);return {...p,score};}).sort((a,b)=>b.score-a.score).slice(0,3);}
-function showRecommendations(){recommendations=getMatches();selected={};document.getElementById("resultIntro").textContent=`Based on your ${answers.feel.toLowerCase()} feel preference, ${answers.priority.toLowerCase()} priority and selected budget.`;document.getElementById("recommended").innerHTML=recommendations.map(card).join("");show("results");console.log("quiz_complete",answers);console.log("recommended_products_view",recommendations.map(p=>p.id));if(answers.next==="compare"){selected[recommendations[0].id]=true;selected[recommendations[1].id]=true;compareSelected();}else if(answers.next==="details"){openDetails(recommendations[0].id,"results");}}
-function card(p){return `<article class="product"><div class="product-image">${p.emoji}</div><span class="pill">Recommended match</span><h3>${p.name}</h3><div class="price">₹${p.price.toLocaleString("en-IN")}</div><div class="tags"><span class="tag">${p.feel} feel</span><span class="tag">${p.support} support</span><span class="tag">${p.cooling==="High"?"Cooling focus":"Everyday comfort"}</span></div><p>${p.description}</p><div class="product-actions"><button class="primary" onclick="openDetails(${p.id},'${document.getElementById("catalog").classList.contains("hide")?"results":"catalog"}')">View details</button><button class="secondary" onclick="toggleSelect(${p.id},this)">${selected[p.id]?"✓ Selected":"＋ Compare"}</button></div></article>`;}
+function bedMarkup(){return `<div class="mini-bed"><div class="mini-mattress"></div><div class="mini-pillow"></div><div class="mini-pillow two"></div><div class="mini-duvet"></div></div>`;}
+function card(p){return `<article class="product"><div class="product-image" style="background:linear-gradient(145deg,#f5f4eb,${p.shade})">${bedMarkup()}<span class="product-emoji">✧</span></div><span class="pill">✦ Recommended match</span><h3>${p.name}</h3><div class="price">₹${p.price.toLocaleString("en-IN")}</div><div class="tags"><span class="tag">${p.feel} feel</span><span class="tag">${p.support} support</span><span class="tag">${p.cooling==="High"?"Cooling focus":"Everyday comfort"}</span></div><p>${p.description}</p><div class="product-actions"><button class="primary" onclick="openDetails(${p.id},'${document.getElementById("catalog").classList.contains("hide")?"results":"catalog"}')">View details</button><button class="secondary" onclick="toggleSelect(${p.id},this)">${selected[p.id]?"✓ Selected":"＋ Compare"}</button></div></article>`;}
+function showRecommendations(){recommendations=getMatches();selected={};document.getElementById("resultIntro").textContent=`Matched to your ${answers.feel.toLowerCase()} feel preference, ${answers.priority.toLowerCase()} priority and selected budget.`;document.getElementById("recommended").innerHTML=recommendations.map(card).join("");document.getElementById("compareResults").classList.add("hide");show("results");console.log("quiz_complete",answers);console.log("recommended_products_view",recommendations.map(p=>p.id));if(answers.next==="compare"){selected[recommendations[0].id]=true;selected[recommendations[1].id]=true;compareSelected();}else if(answers.next==="details"){openDetails(recommendations[0].id,"results");}}
 function showCatalog(){selected={};document.getElementById("catalogProducts").innerHTML=items.map(card).join("");document.getElementById("catalogCompare").classList.add("hide");show("catalog");}
 function toggleSelect(id,button){if(selected[id])delete selected[id];else{if(Object.keys(selected).length>=3){alert("You can compare up to three products.");return;}selected[id]=true;}button.textContent=selected[id]?"✓ Selected":"＋ Compare";console.log("compare_selection",id,selected[id]);}
-function compareSelected(){let ids=Object.keys(selected);if(ids.length<2){alert("Select at least two products using the Compare buttons.");return;}let list=ids.map(id=>items.find(p=>p.id==id));let rows=[["Price",p=>"₹"+p.price.toLocaleString("en-IN")],["Feel",p=>p.feel],["Support",p=>p.support],["Cooling",p=>p.cooling],["Priority match",p=>p.priority],["About",p=>p.description]];let html=`<table class="compare-table"><thead><tr><th>Feature</th>${list.map(p=>`<th>${p.name}</th>`).join("")}</tr></thead><tbody>${rows.map(([label,fn])=>`<tr><th>${label}</th>${list.map(p=>`<td>${fn(p)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;if(!document.getElementById("catalog").classList.contains("hide")){document.getElementById("catalogTable").innerHTML=html;document.getElementById("catalogCompare").classList.remove("hide");}else{document.getElementById("compareResultsTable").innerHTML=html;document.getElementById("compareResults").classList.remove("hide");}console.log("product_comparison_view",ids);}
-function openDetails(id,origin){let p=items.find(x=>x.id===id);window.detailOrigin=origin;document.getElementById("detailContent").innerHTML=`<button class="secondary" onclick="backFromDetails()">← Back to products</button><div class="detail-layout" style="margin-top:25px"><div class="detail-image">${p.emoji}</div><div><div class="eyebrow">Product details · demo</div><h2>${p.name}</h2><div class="price">₹${p.price.toLocaleString("en-IN")}</div><p>${p.description}</p><div class="tags">${p.features.map(f=>`<span class="tag">${f}</span>`).join("")}</div><p><strong>Feel:</strong> ${p.feel}<br><strong>Support:</strong> ${p.support}<br><strong>Cooling:</strong> ${p.cooling}</p><p class="notice">Illustrative product details only; not verified live specifications.</p><button class="primary" onclick="alert('Demo only: this prototype does not process orders.')">Continue to product →</button></div></div>`;show("details");console.log("product_detail_view",p.id,origin);}
+function compareSelected(){let ids=Object.keys(selected);if(ids.length<2){alert("Select at least two mattresses using the Compare buttons.");return;}let list=ids.map(id=>items.find(p=>p.id==id));let rows=[["Price",p=>"₹"+p.price.toLocaleString("en-IN")],["Feel",p=>p.feel],["Support",p=>p.support],["Cooling",p=>p.cooling],["Best for",p=>p.priority],["About",p=>p.description]];let html=`<table class="compare-table"><thead><tr><th>Feature</th>${list.map(p=>`<th>${p.name}</th>`).join("")}</tr></thead><tbody>${rows.map(([label,fn])=>`<tr><th>${label}</th>${list.map(p=>`<td>${fn(p)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;if(!document.getElementById("catalog").classList.contains("hide")){document.getElementById("catalogTable").innerHTML=html;document.getElementById("catalogCompare").classList.remove("hide");}else{document.getElementById("compareResultsTable").innerHTML=html;document.getElementById("compareResults").classList.remove("hide");}console.log("product_comparison_view",ids);}
+function openDetails(id,origin){let p=items.find(x=>x.id===id);window.detailOrigin=origin;document.getElementById("detailContent").innerHTML=`<button class="secondary" onclick="backFromDetails()">← Back to products</button><div class="detail-layout" style="margin-top:25px"><div class="detail-image">${bedMarkup()}</div><div><div class="eyebrow">Made for your rest · demo</div><h2>${p.name}</h2><div class="price">₹${p.price.toLocaleString("en-IN")}</div><p>${p.description}</p><div class="tags">${p.features.map(f=>`<span class="tag">${f}</span>`).join("")}</div><p><strong>Feel:</strong> ${p.feel}<br><strong>Support:</strong> ${p.support}<br><strong>Cooling:</strong> ${p.cooling}</p><p class="notice">Illustrative product details only; not verified live specifications.</p><button class="primary" onclick="alert('This is a student prototype and does not process real orders.')">Continue to product →</button></div></div>`;show("details");console.log("product_detail_view",p.id,origin);}
 function backFromDetails(){if(window.detailOrigin==="catalog")showCatalog();else show("results");}
 </script>
 </body>
